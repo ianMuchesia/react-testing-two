@@ -1,11 +1,13 @@
-import { describe, it, expect } from 'vitest';
+import {render, screen } from "@testing-library/react"
+import App from "./App"
 
-describe('something truthy and falsy', () => {
-  it('true to be true', () => {
-    expect(true).toBe(true);
-  });
+/* import matchers from "@testing-library/jest-dom"
 
-  it('false to be false', () => {
-    expect(false).toBe(false);
-  });
-});
+expect.extend(matchers) */
+
+
+test("renders learn react link",()=>{
+    render(<App/>)
+    const message = screen.getByText(/Hello World/i)
+    expect(linkElement).toBeInTheDocument()
+})
